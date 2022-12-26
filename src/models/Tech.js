@@ -17,6 +17,6 @@ const techSchema = new Schema({
   },
 });
 
-const Tech = mongoose.model("Tech", techSchema);
+const Techs = mongoose.model("Techs", techSchema);
 
-export default Tech;
+export default Techs;

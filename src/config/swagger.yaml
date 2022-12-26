@@ -21,7 +21,7 @@ paths:
                 type: array
                 items:
                   type: string
-  /tech:
+  /techs:
     get:
       tags:
         - Tech

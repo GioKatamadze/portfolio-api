@@ -1,7 +1,7 @@
-import Tech from "../models/Tech.js";
+import Techs from "../models/Tech.js";
 
 const getAllTech = async (_, res) => {
-  const data = await Tech.find();
+  const data = await Techs.find();
   const newData = data.map((tech) => {
     return {
       tech_id: tech.tech_id,
