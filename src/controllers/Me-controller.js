@@ -1,8 +1,8 @@
 import Me from "../models/Me.js";
 
-export const getMeInfo = async (_, res) => {
+const getMeInfo = async (_, res) => {
   const data = await Me.find();
-  const newData = await data.map((me) => {
+  const newData = data.map((me) => {
     return {
       github: me.github,
       linkedin: me.linkedin,
