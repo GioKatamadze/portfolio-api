@@ -16,11 +16,10 @@ connectToMongo();
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/images", express.static("public/storage"));
-app.use(cors());
 
-app.use("/api", cors(), meRouter);
-app.use("/api", cors(), projectRouter);
-app.use("/api", cors(), techRouter);
-app.use("/", cors(), ...swaggerMiddleware());
+app.use("/api", meRouter);
+app.use("/api", projectRouter);
+app.use("/api", techRouter);
+app.use("/", ...swaggerMiddleware());
 
 app.listen(process.env.PORT);
