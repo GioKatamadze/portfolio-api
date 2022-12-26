@@ -12,13 +12,15 @@ import techRouter from "./routes/Tech-router.js";
 const app = express();
 dotenv.config();
 connectToMongo();
-app.use(cors());
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/images", express.static("public/storage"));
+app.use(cors());
+
 app.use("/api", cors(), meRouter);
 app.use("/api", cors(), projectRouter);
 app.use("/api", cors(), techRouter);
 app.use("/", cors(), ...swaggerMiddleware());
 
-app.listen(`https://portfolio-api-production-99be.up.railway.app/api`);
+app.listen(process.env.PORT_URL);
