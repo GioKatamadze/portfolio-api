@@ -12,6 +12,7 @@ import techRouter from "./routes/Tech-router.js";
 const app = express();
 dotenv.config();
 connectToMongo();
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use("/images", express.static("public/storage"));
@@ -20,4 +21,4 @@ app.use("/api", cors(), projectRouter);
 app.use("/api", cors(), techRouter);
 app.use("/", cors(), ...swaggerMiddleware());
 
-app.listen(process.env.PORT || 5000);
+app.listen(`process.env.PORT` || 5000);
