@@ -3,6 +3,6 @@ import getMeInfo from "../controllers/Me-controller.js";
 
 const meRouter = express.Router();
 
-meRouter.get("/users", getMeInfo);
+meRouter.get("/me", getMeInfo);
 
 export default meRouter;

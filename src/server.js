@@ -19,6 +19,6 @@ app.use("/images", express.static("public/storage"));
 app.use("/api", cors(), meRouter);
 app.use("/api", cors(), projectRouter);
 app.use("/api", cors(), techRouter);
-app.use("/", cors(), ...swaggerMiddleware());
+app.use("/api", cors(), ...swaggerMiddleware());
 
-app.listen(`process.env.PORT_URL` || 5000);
+app.listen(process.env.PORT_URL);
