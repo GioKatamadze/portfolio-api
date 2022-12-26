@@ -5,7 +5,7 @@ info:
   version: 0.1.9
 
 servers:
-  - url: https://portfolio-api-production-99be.up.railway.app
+  - url: https://portfolio-api-production-99be.up.railway.app/api
     description: production server
 paths:
   /projects:
