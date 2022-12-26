@@ -5,7 +5,7 @@ info:
   version: 0.1.9
 
 servers:
-  - url: https://web-production-b206.up.railway.app/api
+  - url: https://portfolio-api-production-99be.up.railway.app
     description: production server
   - url: http://localhost:5000/api
     description: local server
