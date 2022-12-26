@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import connectToMongo from "./config/mongo.js";
+import swaggerMiddleware from "./middlewares/swagger-middleware.js";
 import meRouter from "./routes/Me-router.js";
 import projectRouter from "./routes/Project-router.js";
 import techRouter from "./routes/Tech-router.js";
