@@ -1,7 +1,7 @@
-import Me from "../models/Me.js";
+import Mes from "../models/Me.js";
 
 const getMeInfo = async (_, res) => {
-  const data = await Me.find();
+  const data = await Mes.find();
   const newData = data.map((me) => {
     return {
       github: me.github,

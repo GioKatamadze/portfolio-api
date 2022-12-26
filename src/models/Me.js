@@ -13,6 +13,6 @@ const meSchema = new Schema({
   },
 });
 
-const Me = mongoose.model("Me", meSchema);
+const Mes = mongoose.model("Mes", meSchema);
 
-export default Me;
+export default Mes;

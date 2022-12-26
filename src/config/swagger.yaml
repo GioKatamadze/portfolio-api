@@ -34,10 +34,10 @@ paths:
                 type: array
                 items:
                   type: string
-  /me:
+  /mes:
     get:
       tags:
-        - Me
+        - Mes
       responses:
         "200":
           description: Successfully fetched
