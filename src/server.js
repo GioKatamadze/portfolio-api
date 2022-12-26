@@ -21,4 +21,4 @@ app.use("/api", cors(), projectRouter);
 app.use("/api", cors(), techRouter);
 app.use("/", cors(), ...swaggerMiddleware());
 
-app.listen(`process.env.PORT` || 5000);
+app.listen(`process.env.PORT_URL` || 5000);
