@@ -24,11 +24,11 @@ const projectSchema = new Schema({
     required: false,
   },
   tech_name: {
-    type: Schema.Types.String,
+    type: Schema.Types.Array,
     required: true,
   },
   tech_icon: {
-    type: Schema.Types.String,
+    type: Schema.Types.Array,
     required: true,
   },
   thumbnail: {
