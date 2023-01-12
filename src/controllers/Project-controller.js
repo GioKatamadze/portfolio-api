@@ -9,7 +9,8 @@ const getAllProjects = async (_, res) => {
       live_link: project.live_link,
       front_link: project.front_link,
       back_link: project.back_link,
-      tech: project.tech,
+      tech_name: project.tech_name,
+      tech_icon: project.tech_icon,
       thumbnail: project.thumbnail,
       content: project.content,
     };

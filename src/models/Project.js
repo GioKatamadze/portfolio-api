@@ -23,8 +23,12 @@ const projectSchema = new Schema({
     type: Schema.Types.String,
     required: false,
   },
-  tech: {
-    type: Schema.Types.Array,
+  tech_name: {
+    type: Schema.Types.String,
+    required: true,
+  },
+  tech_icon: {
+    type: Schema.Types.String,
     required: true,
   },
   thumbnail: {

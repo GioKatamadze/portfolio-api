@@ -34,6 +34,19 @@ paths:
                 type: array
                 items:
                   type: string
+  /business:
+    get:
+      tags:
+        - Business
+      responses:
+        "200":
+          description: Successfully fetched
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
   /mes:
     get:
       tags:
