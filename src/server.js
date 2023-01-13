@@ -8,6 +8,7 @@ import swaggerMiddleware from "./middlewares/swagger-middleware.js";
 import meRouter from "./routes/Me-router.js";
 import projectRouter from "./routes/Project-router.js";
 import techRouter from "./routes/Tech-router.js";
+import skillRouter from "./routes/Skill-router.js";
 
 const app = express();
 dotenv.config();
@@ -21,6 +22,7 @@ app.use("/icons", express.static("public/icons"));
 app.use("/api", meRouter);
 app.use("/api", projectRouter);
 app.use("/api", techRouter);
+app.use("/api", skillRouter);
 app.use("/", ...swaggerMiddleware());
 
 app.listen(process.env.PORT);

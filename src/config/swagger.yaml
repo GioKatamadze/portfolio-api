@@ -34,7 +34,7 @@ paths:
                 type: array
                 items:
                   type: string
-  /business:
+  /skills:
     get:
       tags:
         - Business
