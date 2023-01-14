@@ -60,3 +60,31 @@ paths:
                 type: array
                 items:
                   type: string
+  /sendemail:
+    post:
+      tags:
+        - Email
+      requestBody:
+        description: Send Email
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                subject:
+                  type: string
+                message:
+                  type: string
+            example:
+              name: Node is awesome
+              email: Don't use nodemon on server
+              subject: Node is awesome
+              message: Don't use nodemon on server
+      responses:
+        "200":
+          description: Email sent
