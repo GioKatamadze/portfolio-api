@@ -28,14 +28,14 @@ app.use("/api/sendemail", (req, res) => {
     service: "gmail",
     auth: {
       user: "giokat.inbox@gmail.com",
-      pass: "Tamusi1003",
+      pass: "byuepxrvcgryilwt",
     },
   });
 
   const mailOptions = {
     from: req.body.email,
     to: "giokat.inbox@gmail.com",
-    subject: `Message from ${req.body.email}: ${req.body.subject}`,
+    subject: `Message from ${req.body.name}: ${req.body.subject}`,
     text: req.body.message,
   };
 
