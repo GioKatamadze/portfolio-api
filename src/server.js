@@ -2,7 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 import connectToMongo from "./config/mongo.js";
 import swaggerMiddleware from "./middlewares/swagger-middleware.js";
