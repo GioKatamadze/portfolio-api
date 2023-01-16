@@ -33,10 +33,11 @@ app.use("/api/sendemail", (req, res) => {
   });
 
   const mailOptions = {
-    from: req.body.email,
-    to: "giokat.inbox@gmail.com",
-    subject: `Message from ${req.body.name}: ${req.body.subject}`,
-    text: req.body.message,
+    from: "giokat.inbox@gmail.com",
+    to: "testmail@example.com",
+    // subject: `Message from ${req.body.name}: ${req.body.subject}`,
+    subject: "testSubject",
+    text: "testText",
   };
 
   // Send Email
