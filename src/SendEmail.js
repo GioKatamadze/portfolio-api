@@ -16,7 +16,7 @@ const sendEmail = async (req, res) => {
     from: `${req.body.mailerState.email}`,
     to: `${process.env.EMAIL}`,
     subject: `Message from ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
-    text: `${req.body.mailerState.message}`,
+    text: `${req.body.mailerState.message} + ${req.body.mailerState.email}`,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
