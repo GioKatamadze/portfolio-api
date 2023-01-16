@@ -28,7 +28,8 @@ app.use("/api/sendemail", cors(), (req, res) => {
     service: "gmail",
     auth: {
       user: "giokat.inbox@gmail.com",
-      pass: "byuepxrvcgryilwt",
+      //   pass: "byuepxrvcgryilwt",
+      pass: "Tamusi1003",
     },
   });
 
@@ -39,7 +40,6 @@ app.use("/api/sendemail", cors(), (req, res) => {
     text: `${req.body.mailerState.message}`,
   };
 
-  // Send Email
   transporter.sendMail(mailOptions, function (err, data) {
     if (err) {
       res.json({
