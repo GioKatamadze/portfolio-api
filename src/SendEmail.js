@@ -1,10 +1,4 @@
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
-
-dotenv.config();
-require("dotenv").config();
-const email = `${process.env.EMAIL}`;
-const pass = `${process.env.PASS}`;
 
 const sendEmail = async (req, res) => {
   const transporter = nodemailer.createTransport({
@@ -18,8 +12,8 @@ const sendEmail = async (req, res) => {
   const mailOptions = {
     from: "Giokatamadze.com",
     to: "giokat.inbox@gmail.com",
-    subject: `Website message from - ${req.body.mailerState.emailValue} - ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
-    text: `${req.body.mailerState.message} ${email} ${pass}`,
+    subject: `Giokatamadze.com - ${req.body.mailerState.emailValue} - ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
+    text: `${req.body.mailerState.message}`,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
