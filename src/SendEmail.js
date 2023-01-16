@@ -6,14 +6,14 @@ const sendEmail = async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: `${process.env.EMAIL}`,
-      pass: `${process.env.PASS}`,
+      user: `\"${process.env.EMAIL}\"`,
+      pass: `\"${process.env.PASS}\"`,
     },
   });
 
   const mailOptions = {
     from: "Giokatamadze.com",
-    to: `${process.env.EMAIL}`,
+    to: `\"${process.env.EMAIL}\"`,
     subject: `Website message from - ${req.body.mailerState.emailValue} - ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
     text: `${req.body.mailerState.message}`,
   };
