@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-const sendEmail = (req, res) => {
+const SendEmail = (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -30,4 +30,4 @@ const sendEmail = (req, res) => {
   });
 };
 
-export default sendEmail;
+export default SendEmail;
