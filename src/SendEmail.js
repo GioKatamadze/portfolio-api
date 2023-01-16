@@ -3,7 +3,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const sendEmail = async (req, res) => {
-  dotenv.config();
+  const email = process.env.EMAIL;
+  const pass = process.env.PASS;
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -11,12 +13,12 @@ const sendEmail = async (req, res) => {
       pass: "byuepxrvcgryilwt",
     },
   });
-  dotenv.config();
+
   const mailOptions = {
     from: "Giokatamadze.com",
     to: "giokat.inbox@gmail.com",
     subject: `Website message from - ${req.body.mailerState.emailValue} - ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
-    text: `${req.body.mailerState.message} ${process.env.EMAIL} ${process.env.PASS}`,
+    text: `${req.body.mailerState.message} ${email} ${pass}`,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
