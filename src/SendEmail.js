@@ -1,31 +1,36 @@
-// const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
 
-// const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
-//   const transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: "giokat.inbox@gmail.com",
-//       pass: "Tamusi1003",
-//     },
-//   });
+dotenv.config();
 
-//   const mailOptions = {
-//     from: req.body.email,
-//     to: "giokat.inbox@gmail.com",
-//     subject: `Message from ${req.body.email}: ${req.body.subject}`,
-//     text: req.body.message,
-//   };
+const sendEmail = async (req, res) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASS,
+    },
+  });
 
-//   // Send Email
-//   transporter.sendMail(mailOptions, function (err, info) {
-//     if (err) {
-//       console.log(err);
-//       res.send(err);
-//     } else {
-//       console.log(info);
-//       res.send(success);
-//     }
-//   });
-// };
+  const mailOptions = {
+    from: `${req.body.mailerState.email}`,
+    to: process.env.EMAIL,
+    subject: `Message from ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
+    text: `${req.body.mailerState.message}`,
+  };
 
-// module.exports = sendEmail;
+  transporter.sendMail(mailOptions, function (err, data) {
+    if (err) {
+      res.json({
+        status: "fail",
+      });
+    } else {
+      console.log("== Message Sent ==");
+      res.json({
+        status: "success",
+      });
+    }
+  });
+};
+
+export default sendEmail;
