@@ -1,9 +1,11 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config();
+const email = `${process.env.EMAIL}`;
+const pass = `${process.env.PASS}`;
 
 const sendEmail = async (req, res) => {
-  const email = `${process.env.EMAIL}`;
-  const pass = `${process.env.PASS}`;
-
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
