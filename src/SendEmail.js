@@ -18,7 +18,7 @@ const sendEmail = async (req, res) => {
     from: `${req.body.mailerState.emailValue}`,
     // to: `"``${process.env.EMAIL}``"`,
     to: "giokat.inbox@gmail.com",
-    subject: `Message from ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
+    subject: `Message from ${req.body.mailerState.emailValue} - ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
     text: `${req.body.mailerState.message}`,
   };
 
