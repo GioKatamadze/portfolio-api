@@ -28,8 +28,8 @@ app.use("/api/sendemail", cors(), (req, res) => {
     service: "gmail",
     auth: {
       user: "giokat.inbox@gmail.com",
-      //   pass: "byuepxrvcgryilwt",
-      pass: "Tamusi1003",
+      pass: "byuepxrvcgryilwt",
+      //   pass: "Tamusi1003",
     },
   });
 
