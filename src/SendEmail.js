@@ -9,8 +9,8 @@ const sendEmail = async (req, res) => {
     auth: {
       user: `${process.env.EMAIL}`,
       //   user: "giokat.inbox@gmail.com",
-      pass: `${process.env.PASS}`,
-      //   pass: "byuepxrvcgryilwt",
+      //   pass: `${process.env.PASS}`,
+      pass: "byuepxrvcgryilwt",
     },
   });
 
