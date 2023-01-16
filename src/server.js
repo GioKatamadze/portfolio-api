@@ -24,7 +24,7 @@ app.use("/api", meRouter);
 app.use("/api", projectRouter);
 app.use("/api", techRouter);
 app.use("/api", skillRouter);
-app.use("/api/sendemail", SendEmail());
+app.use("/api/sendemail", cors(), SendEmail());
 app.use("/", ...swaggerMiddleware());
 
 app.listen(process.env.PORT);
