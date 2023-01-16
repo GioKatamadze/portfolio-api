@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use("/images", express.static("public/thumbnails"));
 app.use("/icons", express.static("public/icons"));
 
-app.use("/api/sendemail", (req, res) => {
+app.use("/api/sendemail", cors(), (req, res) => {
   console.log(req.body);
 
   const transporter = nodemailer.createTransport({
@@ -33,21 +33,23 @@ app.use("/api/sendemail", (req, res) => {
   });
 
   const mailOptions = {
-    from: "giokat.inbox@gmail.com",
-    to: "testmail@example.com",
-    // subject: `Message from ${req.body.name}: ${req.body.subject}`,
-    subject: "testSubject",
-    text: "testText",
+    from: `${req.body.mailerState.email}`,
+    to: "giokat.inbox@gmail.com",
+    subject: `Message from ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
+    text: `${req.body.mailerState.message}`,
   };
 
   // Send Email
-  transporter.sendMail(mailOptions, function (err, info) {
+  transporter.sendMail(mailOptions, function (err, data) {
     if (err) {
-      console.log(err);
-      res.send(err);
+      res.json({
+        status: "fail",
+      });
     } else {
-      console.log(info);
-      res.send(success);
+      console.log("== Message Sent ==");
+      res.json({
+        status: "success",
+      });
     }
   });
 });
