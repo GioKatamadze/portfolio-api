@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const sendEmail = async (req, res) => {
+const SendEmail = async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -33,4 +33,4 @@ const sendEmail = async (req, res) => {
   });
 };
 
-export default sendEmail;
+export default SendEmail;
