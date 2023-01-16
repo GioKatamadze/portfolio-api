@@ -20,36 +20,6 @@ app.use(bodyParser.json());
 app.use("/images", express.static("public/thumbnails"));
 app.use("/icons", express.static("public/icons"));
 
-// app.use("/api/sendemail", cors(), (req, res) => {
-//   const transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: "giokat.inbox@gmail.com",
-//       pass: "byuepxrvcgryilwt",
-//     },
-//   });
-
-//   const mailOptions = {
-//     from: `${req.body.mailerState.email}`,
-//     to: "giokat.inbox@gmail.com",
-//     subject: `Message from ${req.body.mailerState.name}: ${req.body.mailerState.subject}`,
-//     text: `${req.body.mailerState.message}`,
-//   };
-
-//   transporter.sendMail(mailOptions, function (err, data) {
-//     if (err) {
-//       res.json({
-//         status: "fail",
-//       });
-//     } else {
-//       console.log("== Message Sent ==");
-//       res.json({
-//         status: "success",
-//       });
-//     }
-//   });
-// });
-
 app.use("/api", meRouter);
 app.use("/api", projectRouter);
 app.use("/api", techRouter);
