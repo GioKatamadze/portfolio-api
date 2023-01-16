@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+dotenv.config();
 
 const sendEmail = async (req, res) => {
   dotenv.config();
@@ -10,7 +11,7 @@ const sendEmail = async (req, res) => {
       pass: "byuepxrvcgryilwt",
     },
   });
-
+  dotenv.config();
   const mailOptions = {
     from: "Giokatamadze.com",
     to: "giokat.inbox@gmail.com",
