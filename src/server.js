@@ -9,7 +9,7 @@ import meRouter from "./routes/Me-router.js";
 import projectRouter from "./routes/Project-router.js";
 import techRouter from "./routes/Tech-router.js";
 import skillRouter from "./routes/Skill-router.js";
-import SendEmail from "./SendEmail.js";
+import sendEmail from "./SendEmail.js";
 
 const app = express();
 dotenv.config();
@@ -24,7 +24,7 @@ app.use("/api", meRouter);
 app.use("/api", projectRouter);
 app.use("/api", techRouter);
 app.use("/api", skillRouter);
-app.use("/api/sendemail", cors(), SendEmail());
+app.use("/api/sendemail", cors(), sendEmail);
 app.use("/", ...swaggerMiddleware());
 
 app.listen(process.env.PORT);
