@@ -20,10 +20,10 @@ app.use(bodyParser.json());
 app.use("/images", express.static("public/thumbnails"));
 app.use("/icons", express.static("public/icons"));
 
-app.use("/api", meRouter);
-app.use("/api", projectRouter);
-app.use("/api", techRouter);
-app.use("/api", skillRouter);
+app.use("/api", cors(), meRouter);
+app.use("/api", cors(), projectRouter);
+app.use("/api", cors(), techRouter);
+app.use("/api", cors(), skillRouter);
 app.use("/api/sendemail", cors(), sendEmail);
 app.use("/", ...swaggerMiddleware());
 
