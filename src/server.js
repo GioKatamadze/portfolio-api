@@ -12,6 +12,7 @@ import skillRouter from "./routes/Skill-router.js";
 import sendEmail from "./SendEmail.js";
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 dotenv.config();
 connectToMongo();
 
@@ -27,4 +28,6 @@ app.use("/api", cors(), skillRouter);
 app.use("/api/sendemail", cors(), sendEmail);
 app.use("/", ...swaggerMiddleware());
 
-app.listen(process.env.PORT);
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});;
