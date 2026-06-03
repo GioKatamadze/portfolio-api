@@ -27,7 +27,7 @@ app.use("/api", cors(), skillRouter);
 app.use("/api/sendemail", cors(), sendEmail);
 app.use("/", ...swaggerMiddleware());
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on port ${PORT}`);
